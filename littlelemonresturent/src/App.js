@@ -14,7 +14,7 @@ function App() {
     occasion: " ",
   });
 
-  
+
   const today = new Date();
 
   const init = { times: fetchAPI(today) };
@@ -35,10 +35,10 @@ function App() {
   }
 
   function updateTimes(state, action) {
-    if (action.type === "init") {
+    if (action.type === initializeTimes) {
       return { times: fetchAPI(today) };
     }
-    if (action.type === "update_times") {
+    if (action.type === updateTimes) {
       let selectedBookingDate = new Date(bookingData.date);
       let newTimes = fetchAPI(selectedBookingDate).filter(
         (time) => time !== "17:00"
